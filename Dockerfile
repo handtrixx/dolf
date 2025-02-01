@@ -48,7 +48,7 @@ RUN ./build-debug-sdl2 && \
 
 # Cleanup
 RUN apt-get autoremove -y && \
-    apt-get remove -y cmake git automake gcc g++ make nasm buildessentials && \
+    apt-get remove -y cmake git automake gcc g++ make nasm build-essential && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /dosbox-x

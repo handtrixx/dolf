@@ -12,7 +12,7 @@ Also Dosbox-X is not available in Retroarch but provides much more functionality
 1. clone the repository
 
 2. build the image
-docker build -t dosbox-image .
+docker build -t dolf-image .
 
 3. Config Wolf for DOS Games
 edit your wolf config.toml
