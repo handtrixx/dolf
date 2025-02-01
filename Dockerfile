@@ -36,9 +36,7 @@ RUN apt-get update && \
     libfreetype-dev \
     libxkbfile-dev \
     libxrandr-dev \
-    kdialog \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    kdialog
 
 # Clone the DOSBox-X repository
 RUN git clone https://github.com/joncampbell123/dosbox-x.git /dosbox-x
@@ -47,6 +45,13 @@ RUN ls -la /dosbox-x
 WORKDIR /dosbox-x
 RUN ./build-debug-sdl2 && \
     make install
+
+# Cleanup
+RUN apt-get autoremove -y && \
+    apt-get remove -y cmake git automake gcc g++ make nasm buildessentials && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /dosbox-x
 
 COPY --chmod=777 scripts/startup.sh /opt/gow/startup-app.sh
 
