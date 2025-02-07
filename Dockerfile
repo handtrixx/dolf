@@ -55,8 +55,13 @@ RUN apt-get autoremove -y && \
 
 COPY --chmod=777 scripts/startup.sh /opt/gow/startup-app.sh
 
-RUN mkdir -p /opt/dosbox/c
+RUN mkdir -p /cfg
+RUN mkdir -p /opt/dosbox/os/dos/c
+RUN mkdir -p /opt/dosbox/os/win31/c
+RUN mkdir -p /opt/dosbox/os/win98/c
+RUN mkdir -p /opt/dosbox/configs
 WORKDIR /opt/dosbox
+COPY configs/ /cfg/
 
 ENV XDG_RUNTIME_DIR=/tmp/.X11-unix
 
