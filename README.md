@@ -1,22 +1,17 @@
+# DOLF
+
 <img src="logo.webp" alt="Logo" width="240" height="240">
 
-# DOLF
-Dosbox-X (MS-DOS) for Wolf, v0.10
+Dosbox-X (MS-DOS) for Wolf, v0.3
+
+## Why?
+I want to be able to run my MS-DOS discs (Games!) inside Wolf, e.g., to directly jump into the command line and have a GUI to switch images etc.
+Also Dosbox-X is not available in Retroarch but provides much more functionality then the original Dosbox, like the GUI.
 
 ## What is it?
 This projects provides a dosbox-x docker image to be used by the amazing Wolf project.
 
-## Why?
-I want to be able to run my MS-DOS discs inside Wolf, e.g., to directly jump into the command line and have a GUI to switch images etc.
-Also Dosbox-X is not available in Retroarch but provides much more functionality then the original Dosbox, like the GUI.
-
-## Quickstart
-Dolf tries to make you start of MS-DOS as easy as possible. 
-If you are missing images of your games/applications, you either have to create image files from the 
-installation discs you still have, or can maybe find them at a location like archive.org.
-
-### MS-DOS
-After follwing this you will get a virtual PC with:
+Using this you will get a you virtual PC with:
 - A 486 DX2 CPU on 66 MHZ (tweakable)
 - 16 MB of RAM (608KB EMS memory)
 - A 2GB (!) HDD as C:
@@ -26,9 +21,15 @@ After follwing this you will get a virtual PC with:
 - Mouse Driver
 - Creative Labs Soundblaster 16 sound card at IRQ 7, DMA 5
 
-So, an amazing machine on the level of year 1993
+So, an amazing gaming PC on the level of year 1993
 
-#### 1. Edit Wolf Config file
+## Quickstart
+
+Dolf tries to make you start of MS-DOS in Wolf as easy as possible. 
+If you are missing images of your games/applications, you either have to create image files from the 
+installation discs you still have, or can maybe find them at a location like archive.org.
+
+### 1. Edit Wolf Config file
 ```toml
 [[apps]]
 start_virtual_compositor = true
@@ -52,11 +53,11 @@ title = 'DosBox'
     type = 'docker'
 ```
 
-#### 3. Start Image again
+### 2. Start Image again
 After the first reboot of the install leave the session by entering exit into dosbox window.
 After routines run through, you maybe face a blocked moonlight session. If that's the case, just quit and start the session again.
 
-## Developer
+## Developer Guide
 1. clone the repository
 
 2. build the image
@@ -64,6 +65,31 @@ docker build -t dolf-image .
 
 3. Config Wolf for DOS Games
 edit your wolf config.toml
+
+4. Modify the sources as you wish
+
+5. Start Moonlight to test it
+
+## Roadmap
+
+### v0.5
+ - [ ] Dolf listed in Wildlife as Community APP
+
+### v0.4
+ - [x] Decision to separate Win3.11 and Win98SE to separate projects, to have a stable and simple env for MS-DOS
+ - [ ] Extending Documentation
+ - [x] Generation of Logo
+ - [ ] Generation of Screenshot
+
+### v0.3
+ - [x] Testing by playing (tested Ascendancy and Warcaraft II ... much too long ... lost focus ...
+
+### v0.2
+- [x] Being able to start Dolf in Wolf and running games
+
+### v0.1
+- [x] Latest DosBox-X in a Docker Container
+- [x] Configuration for a 1993 machine
 
 ## FAQ
 Answers to some basic questions
@@ -76,13 +102,6 @@ You have 3 options:
 - Type in "exit" on the command line
 - Use the DOSBOX GUI to quit the session
 
-## Roadmap
-
-### v.002
-- Configuration for a 1993 machine
-
-### v0.01
-- Latest DosBox-X in a Docker Container
 
 ## License
 Copyright 2025 Niklas Stephan
