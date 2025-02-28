@@ -65,6 +65,11 @@ Answers to some basic questions
 ### My Game does not find the CD even when I mounted it, what can I do?
 During installation many MS-DOS games store the drive letter as a fixed constant, that means you have to ensure you have to mount the games CD exactly on the same drive letter you used during installation.
 
+### How can I exit MS-DOS?
+You have 3 options:
+- Disconnect from the session by using the Moonlight Keyboard Combo
+- Type in "exit" on the command line
+- Use the DOSBOX GUI to quit the session
 
 ## History and Todo's
 
