@@ -1,3 +1,4 @@
+<img src="logo.webp" alt="Logo" width="240" height="240">
 # DOLF
 Dosbox-X (MS-DOS) for Wolf, v0.10
 
