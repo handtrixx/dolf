@@ -1,5 +1,5 @@
 # DOLF
-Dosbox-X (MS-DOS) for Wolf
+Dosbox-X (MS-DOS) for Wolf, v0.10
 
 ## What is it?
 This projects provides a dosbox-x docker image to be used by the amazing Wolf project.
@@ -15,13 +15,16 @@ installation discs you still have, or can maybe find them at a location like arc
 
 ### MS-DOS
 After follwing this you will get a virtual PC with:
-- A 486 DX2 CPU on 66 MHZ
-- 128 MB of RAM
-- A 2GB HDD as C:
+- A 486 DX2 CPU on 66 MHZ (tweakable)
+- 16 MB of RAM (608KB EMS memory)
+- A 2GB (!) HDD as C:
 - MS-DOS 5
+- S3 Trio Graphics Adapter
 - CD-ROM Drive(s) + driver
-- MOUSE DRIVER
-- SOUNDBLASTER 16 sound card at IRQ 7, DMA 5
+- Mouse Driver
+- Creative Labs Soundblaster 16 sound card at IRQ 7, DMA 5
+
+So, an amazing machine on the level of year 1993
 
 #### 1. Edit Wolf Config file
 ```toml
@@ -71,7 +74,13 @@ You have 3 options:
 - Type in "exit" on the command line
 - Use the DOSBOX GUI to quit the session
 
-## History and Todo's
+## Roadmap
+
+### v.002
+- Configuration for a 1993 machine
+
+### v0.01
+- Latest DosBox-X in a Docker Container
 
 ## License
 Copyright 2025 Niklas Stephan
