@@ -57,8 +57,6 @@ COPY --chmod=777 scripts/startup.sh /opt/gow/startup-app.sh
 
 RUN mkdir -p /cfg
 RUN mkdir -p /opt/dosbox/os/dos/c
-RUN mkdir -p /opt/dosbox/os/win31/c
-RUN mkdir -p /opt/dosbox/os/win98/d
 RUN mkdir -p /opt/dosbox/configs
 WORKDIR /opt/dosbox
 COPY configs/ /cfg/

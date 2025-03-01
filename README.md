@@ -36,12 +36,42 @@ installation discs you still have, or can maybe find them at a location like arc
 ```toml
 [[apps]]
 start_virtual_compositor = true
-title = 'DosBox'
+title = 'Dolf'
     [apps.runner]
     base_create_json = '''{
         "HostConfig": {
             "IpcMode": "host",
-            "CapAdd": ["NET_RAW", "MKNOD"],
+            "CapAdd": ["MKNOD"],
+            "Privileged": false,
+            "DeviceCgroupRules": ["c 13:* rmw", "c 244:* rmw"]
+        }
+    }
+'''
+    devices = []
+    env = [ 'RUN_SWAY=true', 'GOW_REQUIRED_DEVICES=/dev/input/* /dev/dri/*' ]
+    image = 'ghcr.io/handtrixx/dolf:latest'
+    mounts = []
+    name = 'Dolf'
+    ports = []
+    type = 'docker'
+```
+
+### 2. Start Moonlight
+After the first reboot of the install leave the session by entering exit into dosbox window.
+After routines run through, you maybe face a blocked moonlight session. If that's the case, just quit and start the session again.
+
+## Advanced
+
+### 1. Edit Wolf Config file
+```toml
+[[apps]]
+start_virtual_compositor = true
+title = 'Dolf'
+    [apps.runner]
+    base_create_json = '''{
+        "HostConfig": {
+            "IpcMode": "host",
+            "CapAdd": ["MKNOD"],
             "Privileged": false,
             "DeviceCgroupRules": ["c 13:* rmw", "c 244:* rmw"]
         }
@@ -49,7 +79,7 @@ title = 'DosBox'
 '''
     devices = []
     env = [ 'RUN_SWAY=true', 'GOW_REQUIRED_DEVICES=/dev/input/* /dev/dri/*',  'KEYBOARDLAYOUT=de', 'XKB_DEFAULT_LAYOUT=de' ]
-    image = 'dosbox-image'
+    image = 'ghcr.io/handtrixx/dolf:latest'
     mounts = [ '/storage/storagefs/wolf/data/dosbox:/opt/dosbox:rw' ]
     name = 'Dolf'
     ports = []
@@ -59,6 +89,7 @@ title = 'DosBox'
 ### 2. Start Image again
 After the first reboot of the install leave the session by entering exit into dosbox window.
 After routines run through, you maybe face a blocked moonlight session. If that's the case, just quit and start the session again.
+
 
 ## Developer Guide
 1. clone the repository
