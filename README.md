@@ -90,7 +90,6 @@ title = 'Dolf'
 After the first reboot of the install leave the session by entering exit into dosbox window.
 After routines run through, you maybe face a blocked moonlight session. If that's the case, just quit and start the session again.
 
-
 ## Developer Guide
 1. clone the repository
 
@@ -110,10 +109,10 @@ edit your wolf config.toml
  - [ ] Dolf listed in Wildlife as Community APP
 
 ### v0.4
- - [x] Decision to separate Win3.11 and Win98SE to separate projects, to have a stable and simple env for MS-DOS
- - [ ] Extending Documentation
+ - [ ] Extending and correting documentation
  - [x] Generation of Logo
- - [ ] Generation of Screenshot
+ - [x] Generation of Screenshot
+ - [x] Decision to separate Win3.11 and Win98SE to separate projects, to have a stable and simple env for MS-DOS
 
 ### v0.3
  - [x] Testing by playing (tested Ascendancy and Warcaraft II ... much too long ... lost focus ...
@@ -135,6 +134,11 @@ You have 3 options:
 - Disconnect from the session by using the Moonlight Keyboard Combo
 - Type in "exit" on the command line
 - Use the DOSBOX GUI to quit the session
+
+
+### I don't like the name Dolf, and I dont want it to be shown in my Moonlight client
+Hey, say this to Dolph Lundgren and you will end up with servere injuries. 
+Anyhow, just can just rename it to whatever you like in the Wolf configuration file.
 
 
 ## License
