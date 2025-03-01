@@ -23,6 +23,9 @@ Using this you will get a you virtual PC with:
 
 So, an amazing gaming PC on the level of year 1993
 
+
+<img src="screenshot.webp" alt="Screenshot" width="640" height="480">
+
 ## Quickstart
 
 Dolf tries to make you start of MS-DOS in Wolf as easy as possible. 
