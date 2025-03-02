@@ -2,14 +2,14 @@
 
 <img src="logo.webp" alt="Logo" width="240" height="240">
 
-Dosbox-X (MS-DOS) for Wolf, v0.5
+DOS for Wolf, v0.5
 
 ## Why?
-I want to be able to run my MS-DOS discs (Games!) inside Wolf, e.g., to directly jump into the command line and have a GUI to switch images etc.
-Also Dosbox-X is not available in Retroarch but provides much more functionality then the original Dosbox, like the GUI.
+I want to be able to run my MS-DOS discs (Games!) inside [Wolf](https://games-on-whales.github.io/wolf/stable/), e.g., to directly jump into the command line and have a GUI to switch images etc.
+Also [Dosbox-X](https://dosbox-x.com/) is not available in [Retroarch](https://www.retroarch.com/) but provides much more functionality then the original Dosbox, like the GUI.
 
 ## What is it?
-This projects provides a dosbox-x docker image to be used by the amazing Wolf project.
+This projects provides a dosbox-x docker [image](https://github.com/handtrixx/dolf/pkgs/container/dolf) to be used by the amazing Wolf project.
 
 Using this you will get a you virtual PC with:
 - A 486 DX2 CPU on 66 MHZ (tweakable)
@@ -57,8 +57,7 @@ title = 'Dolf'
 ```
 
 ### 2. Start Moonlight
-After the first reboot of the install leave the session by entering exit into dosbox window.
-After routines run through, you maybe face a blocked moonlight session. If that's the case, just quit and start the session again.
+and play DOS Games
 
 ## Advanced Setup
 
