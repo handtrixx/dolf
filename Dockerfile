@@ -53,14 +53,16 @@ RUN apt-get autoremove -y && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /dosbox-x
 
-COPY --chmod=777 scripts/startup.sh /opt/gow/startup-app.sh
+COPY --chmod=777 ./startup.sh /opt/gow/startup-app.sh
 
-RUN mkdir -p /cfg
-RUN mkdir -p /opt/dosbox/os/dos/c
-RUN mkdir -p /opt/dosbox/configs
-WORKDIR /opt/dosbox
-COPY configs/ /cfg/
+WORKDIR /home/retro
+COPY ./dos.conf /tmp/dos.conf
+COPY ./dos.conf /home/retro/dos.conf
+RUN chown -R 1000:1000 /home/retro
 
+USER root
+RUN mkdir /tmp/.X11-unix
+RUN chmod 1777 /tmp/.X11-unix
 ENV XDG_RUNTIME_DIR=/tmp/.X11-unix
 
 ARG IMAGE_SOURCE

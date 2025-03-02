@@ -2,7 +2,7 @@
 
 <img src="logo.webp" alt="Logo" width="240" height="240">
 
-Dosbox-X (MS-DOS) for Wolf, v0.3
+Dosbox-X (MS-DOS) for Wolf, v0.5
 
 ## Why?
 I want to be able to run my MS-DOS discs (Games!) inside Wolf, e.g., to directly jump into the command line and have a GUI to switch images etc.
@@ -60,7 +60,7 @@ title = 'Dolf'
 After the first reboot of the install leave the session by entering exit into dosbox window.
 After routines run through, you maybe face a blocked moonlight session. If that's the case, just quit and start the session again.
 
-## Advanced
+## Advanced Setup
 
 ### 1. Edit Wolf Config file
 ```toml
@@ -78,7 +78,7 @@ title = 'Dolf'
     }
 '''
     devices = []
-    env = [ 'RUN_SWAY=true', 'GOW_REQUIRED_DEVICES=/dev/input/* /dev/dri/*',  'KEYBOARDLAYOUT=de', 'XKB_DEFAULT_LAYOUT=de' ]
+    env = [ 'RUN_SWAY=true', 'GOW_REQUIRED_DEVICES=/dev/input/* /dev/dri/*', 'KEYBOARDLAYOUT=de', 'XKB_DEFAULT_LAYOUT=de' ]
     image = 'ghcr.io/handtrixx/dolf:latest'
     mounts = [ '/storage/storagefs/wolf/data/dosbox:/opt/dosbox:rw' ]
     name = 'Dolf'
@@ -87,35 +87,41 @@ title = 'Dolf'
 ```
 
 ### 2. Start Image again
-After the first reboot of the install leave the session by entering exit into dosbox window.
+After the first reboot of the install leave the session by entering exit into Dosbox window.
 After routines run through, you maybe face a blocked moonlight session. If that's the case, just quit and start the session again.
 
 ## Developer Guide
 1. clone the repository
 
-2. build the image
-docker build -t dolf-image .
+2. Modify the sources as you wish
 
-3. Config Wolf for DOS Games
-edit your wolf config.toml
+3. build the image
+e.g. docker build -t dolf-image .
 
-4. Modify the sources as you wish
+3. Config Wolf
+edit your wolf config.toml to use "dolf-image".
 
 5. Start Moonlight to test it
 
 ## Roadmap
 
-### v0.5
+### v0.6
  - [ ] Dolf listed in Wildlife as Community APP
 
+### v0.5
+- [x] Remove dependencies for external mounts
+- [x] Modify startup script to work on new and existing installation
+- [x] Modify Keyboard mapping (default: us)
+- [x] publish docker image at ghcr.io/handtrixx/dolf
+
 ### v0.4
- - [ ] Extending and correting documentation
+ - [x] Extending and correting documentation
  - [x] Generation of Logo
  - [x] Generation of Screenshot
  - [x] Decision to separate Win3.11 and Win98SE to separate projects, to have a stable and simple env for MS-DOS
 
 ### v0.3
- - [x] Testing by playing (tested Ascendancy and Warcaraft II ... much too long ... lost focus ...
+ - [x] Testing by playing (tested Ascendancy and Warcaraft II ... much too long ... lost focus ...)
 
 ### v0.2
 - [x] Being able to start Dolf in Wolf and running games
@@ -135,11 +141,13 @@ You have 3 options:
 - Type in "exit" on the command line
 - Use the DOSBOX GUI to quit the session
 
-
 ### I don't like the name Dolf, and I dont want it to be shown in my Moonlight client
 Hey, say this to Dolph Lundgren and you will end up with servere injuries. 
-Anyhow, just can just rename it to whatever you like in the Wolf configuration file.
+Anyhow, you can just rename it to whatever you like in the Wolf configuration file.
 
+### The Keyboard Layout is messed up, how can i fix that?
+On default keyboard layout "us" is used, but you can pass an other one for Dosbox in the wolf config file with parameter "KEYBOARDLAYOUT".
+Also you can pass another layout for the underlying linux operating system with "XKB_DEFAULT_LAYOUT". See section Advanced Setup for a working example.
 
 ## License
 Copyright 2025 Niklas Stephan
