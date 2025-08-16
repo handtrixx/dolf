@@ -105,7 +105,8 @@ edit your wolf config.toml to use "dolf-image".
 ## Roadmap
 
 ### v0.6
- - [ ] Dolf listed in Wildlife as Community APP
+ - [ ] Updated Build
+ - [ ] Providing graphic for Dolf panel in moonlight
 
 ### v0.5
 - [x] Remove dependencies for external mounts
