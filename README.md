@@ -2,7 +2,7 @@
 
 <img src="logo.webp" alt="Logo" width="240" height="240">
 
-DOS for Wolf, v0.5
+DOS for Wolf, v0.6
 
 ## Why?
 I want to be able to run my MS-DOS discs (Games!) inside [Wolf](https://games-on-whales.github.io/wolf/stable/), e.g., to directly jump into the command line and have a GUI to switch images etc.
@@ -133,7 +133,7 @@ edit your wolf config.toml to use "ghcr.io/handtrixx/dolf:latest".
 
 ### v0.6
  - [X] Updated Build
- - [ ] Providing graphic for Dolf panel in moonlight
+ - [X] Providing graphic for Dolf panel in moonlight
 
 ### v0.5
 - [x] Remove dependencies for external mounts
