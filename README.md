@@ -62,24 +62,32 @@ and play DOS Games
 ## Advanced Setup
 
 ### 1. Edit Wolf Config file
+
 ```toml
 [[apps]]
+icon_png_path = 'https://games-on-whales.github.io/wildlife/apps/steam/assets/icon.png'
 start_virtual_compositor = true
 title = 'Dolf'
+
     [apps.runner]
     base_create_json = '''{
-        "HostConfig": {
-            "IpcMode": "host",
-            "CapAdd": ["MKNOD"],
-            "Privileged": false,
-            "DeviceCgroupRules": ["c 13:* rmw", "c 244:* rmw"]
-        }
-    }
+  "HostConfig": {
+    "IpcMode": "host",
+    "CapAdd": ["MKNOD"],
+    "SecurityOpt": ["seccomp=unconfined", "apparmor=unconfined"],
+    "Ulimits": [{"Name":"nofile", "Hard":10240, "Soft":10240}],
+    "Privileged": false,
+    "DeviceCgroupRules": ["c 13:* rmw", "c 244:* rmw"]
+  }
+}
 '''
     devices = []
-    env = [ 'RUN_SWAY=true', 'GOW_REQUIRED_DEVICES=/dev/input/* /dev/dri/*', 'KEYBOARDLAYOUT=de', 'XKB_DEFAULT_LAYOUT=de' ]
+    env = [ 'PROTON_LOG=1', 'RUN_SWAY=true', 'GOW_REQUIRED_DEVICES=/dev/input/* /dev/dri/* /dev/nvidia*',
+    'TZ=Europe/Berlin',
+    'XKB_DEFAULT_LAYOUT=de',
+    'KEYBOARDLAYOUT=de' ]
     image = 'ghcr.io/handtrixx/dolf:latest'
-    mounts = [ '/storage/storagefs/wolf/data/dosbox:/opt/dosbox:rw' ]
+    mounts = []
     name = 'Dolf'
     ports = []
     type = 'docker'
@@ -97,15 +105,34 @@ After routines run through, you maybe face a blocked moonlight session. If that'
 3. build the image
 e.g. docker build -t dolf-image .
 
-3. Config Wolf
+4. Config Wolf
 edit your wolf config.toml to use "dolf-image".
 
 5. Start Moonlight to test it
 
+## Create GitHub container image
+1. clone the repository
+
+2. Modify the sources as you wish
+
+3. build the image
+e.g. docker build -t dolf-image .
+
+4. tag the image 
+e.g. docker tag dolf-image ghcr.io/handtrixx/dolf:latest
+
+5. push the image to your container registry
+docker push ghcr.io/handtrixx/dolf:latest
+
+6. Config Wolf
+edit your wolf config.toml to use "ghcr.io/handtrixx/dolf:latest".
+
+7. Start Moonlight to test it
+
 ## Roadmap
 
 ### v0.6
- - [ ] Updated Build
+ - [X] Updated Build
  - [ ] Providing graphic for Dolf panel in moonlight
 
 ### v0.5
