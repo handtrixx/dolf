@@ -65,7 +65,7 @@ and play DOS Games
 
 ```toml
 [[apps]]
-icon_png_path = 'https://games-on-whales.github.io/wildlife/apps/steam/assets/icon.png'
+icon_png_path = 'https://github.com/handtrixx/dolf/blob/26f3986482e2132c330d957316cc7e769557ecfe/icon.png'
 start_virtual_compositor = true
 title = 'Dolf'
 
